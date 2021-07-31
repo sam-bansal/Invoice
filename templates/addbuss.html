@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+{% block body %}
+                <!-- Page content-->
+                <div class="container-fluid">
+                    <h1 class="mt-4">Add New Business</h1>
+                    <h2>Enter Details of New Business</h2>
+                    <form autocomplete="on" action = "/addbuss" method="post">
+                      <div class="form-group row">
+                      <div class="form-group row">
+                      <label for="cname" class="col-sm-2 col-form-label">Company Name</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="cname" name="cname" placeholder="Company Name">
+                          </div><br>
+                      </div><br>
+                        <div class="form-group row">
+                      <label for="cemail" class="col-sm-2 col-form-label">Company Email</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="cemail" name="cemail" placeholder="Company Email">
+                          </div><br>
+                      </div><br>
+
+                        <div class="form-group row">
+                      <label for="cweb" class="col-sm-2 col-form-label">Company website</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="cweb" name="cweb" placeholder="Company Website">
+                          </div><br>
+                      </div><br>
+
+                         <div class="form-group row">
+                      <label for="email" class="col-sm-2 col-form-label">E-mail Address</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="email" name="email" placeholder="E-mail">
+                          </div><br>
+                      </div><br>
+
+                          <div class="form-group row">
+                      <label for="phno" class="col-sm-2 col-form-label">Phone Number</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="phno" name="phno" placeholder="Phone number">
+                          </div><br>
+                      </div><br>
+
+                         <div class="form-group row">
+                      <label for="addr" class="col-sm-2 col-form-label">Address</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="addr" name="addr" placeholder="Address">
+                          </div><br>
+                      </div>
+<br>
+
+
+                         <div class="form-group row">
+                      <label for="city" class="col-sm-2 col-form-label">City</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="city" name="city" placeholder="City">
+                          </div><br>
+                      </div>
+<br>
+                             <div class="form-group row">
+                      <label for="state" class="col-sm-2 col-form-label">State</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="state" name="state" placeholder="State">
+                          </div><br>
+                      </div>
+<br>
+                           <div class="form-group row">
+                      <label for="country" class="col-sm-2 col-form-label">Country</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="country" name="country" placeholder="Country">
+                          </div><br>
+                      </div>
+<br>
+                           <div class="form-group row">
+                      <label for="gstin" class="col-sm-2 col-form-label">GSTIN</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="gstin" name="gstin" placeholder="GSTIN">
+                          </div><br>
+                      </div>
+<br>
+
+
+
+                         <div class="form-group row">
+                      <label for="logo" class="col-sm-2 col-form-label">Logo</label>
+                          <div class="col-sm-10">
+                            <input type="file" class="form-control-file" id="logo" name="logo" ><br>
+                               <button type="submit" class="btn btn-primary">Submit</button>
+                          </div><br>
+                      </div><br>
+
+
+
+
+
+                    </form>
+
+
+                   <!-- <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                    <p>
+                        Make sure to keep all page content within the
+                        <code>#page-content-wrapper</code>
+                        . The top navbar is optional, and just for demonstration. Just create an element with the
+                        <code>#sidebarToggle</code>
+                        ID which will toggle the menu when clicked.
+                    </p> --!>
+                </div>
+            </div>
+        </div>
+{% endblock %}

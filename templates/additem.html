@@ -1,0 +1,236 @@
+{% extends "layout.html" %}
+{% block body %}
+                <!-- Page content-->
+                <div class="container-fluid">
+                    <h1 class="mt-4">WELCOME  !!</h1>
+                    <h3>Here you can add items  invoice</h3>
+                    <div>
+                    <h2>
+                    <input type="text" id="invoice-title" name="invoice-title" placeholder="Invoice" value="Invoice">
+                    </h2>
+                    </div>
+
+                    <!-- Pre-filled data of clients and business connected with respective databases --!>
+                <div class="form-group row">
+                    <div class="invoice-detail-header content-block">
+                        <div class="row">
+                            <div class="col-md invoice-address invoice-address-company">
+                                <h3>From</h3>
+                                <form>
+                                    <div class="input-with-label-wrapper">
+                                        <div class="label">
+                                            <label for="invoice-company-name">Name</label>
+                                        </div>
+                                        <div class="content">
+                                            <input type="text" id="invoice-company-name" name="invoice-company-name" autocomplete="organization" placeholder="Business Name" value="">
+                                        </div>
+                                    </div>
+                                    <div class="input-with-label-wrapper">
+                                        <div class="label">
+                                            <label for="invoice-company-email">Email</label>
+                                        </div>
+                                        <div class="content">
+                                            <div class="text-with-icon w-100">
+                                                <input type="email" id="invoice-company-email" name="invoice-company-email" class="invoice-company-email" autocomplete="email" placeholder="name@business.com" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-with-label-wrapper"><div class="label with-baseline">
+                                        <label for="invoice-company-address1">Address</label>
+                                    </div>
+                                        <div class="content">
+                                            <div>
+                                                <input type="text" id="invoice-company-address1" name="invoice-company-address1" placeholder="Street" autocomplete="street-address" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-with-label-wrapper">
+                                        <div class="label">
+                                            <label for="invoice-company-phone">Phone</label>
+                                        </div>
+                                        <div class="content">
+                                            <input type="text" id="invoice-company-phone" name="invoice-company-phone" data-selector="invoice-company-phone-input" placeholder="(123) 456 789" autocomplete="tel" value="">
+                                        </div>
+                                    </div>
+                                    <div class="input-with-label-wrapper">
+                                        <div class="label with-baseline">
+                                            <label for="invoice-company-business-number" title="Business Number">Business Number</label>
+                                        </div>
+                                        <div class="content">
+                                            <input type="text" id="invoice-company-business-number" name="invoice-company-business-number" placeholder="E.g. 123-45-6789" value="">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md invoice-address invoice-address-client">
+                                <h3>Bill To</h3>
+                                <div class="input-with-label-wrapper">
+                                    <div class="label">
+                                        <label for="invoice-client-name">Name</label>
+                                    </div><div class="content">
+                                    <div class="client-suggest">
+                                        <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-1" aria-expanded="false" class="react-autosuggest__container">
+                                            <input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-1" class="react-autosuggest__input" id="invoice-client-name" placeholder="Client Name" value="">
+                                            <div id="react-autowhatever-1" role="listbox" class="react-autosuggest__suggestions-container">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="input-with-label-wrapper">
+                                    <div class="label">
+                                        <label for="invoice-client-email">Email</label>
+                                    </div>
+                                    <div class="content">
+                                        <div class="text-with-icon w-100">
+                                            <input type="email" id="invoice-client-email" name="invoice-client-email" class="invoice-client-email" autocomplete="off" placeholder="name@client.com" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-with-label-wrapper">
+                                    <div class="label with-baseline">
+                                        <label for="invoice-client-address1">Address</label>
+                                    </div><div class="content">
+                                    <div>
+                                        <input type="text" id="invoice-client-address1" name="invoice-client-address1" placeholder="Street" autocomplete="" value="">
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="input-with-label-wrapper">
+                                    <div class="label">
+                                        <label for="invoice-client-phone">Phone</label>
+                                    </div>
+                                    <div class="content">
+                                        <input type="text" id="invoice-client-phone" name="invoice-client-phone" data-selector="invoice-client-phone-input" placeholder="(123) 456 789" autocomplete="" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <br><hr>
+
+                    <!-- Inputs for dates --!>
+
+                    <div class="container-fluid">
+                        <div class="form-group row">
+                      <label for="invoicedate" class="col-sm-2 col-form-label">Invoice Date</label>
+                            <div class="col-sm-10">
+                            <input type="date" class="form-control" id="invoicedate" name="invoicedate" placeholder="01/01/2000">
+                            </div>
+                        </div><br>
+
+                        <div class="form-group row">
+                      <label for="duedate" class="col-sm-2 col-form-label">Due Date</label>
+                            <div class="col-sm-10">
+                            <input type="date" class="form-control" id="duedate" name="duedate" placeholder="01/01/2000">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <h2> Items</h2>
+
+                    <form class="row gy-2 gx-3 align-items-center" action="/additem" method="post">
+  <div class="col-auto">
+    <label class="visually-hidden" for="description">Item description</label>
+    <input type="text" class="form-control" id="description" name="description" placeholder="Item Description">
+  </div>
+  <div class="col-auto">
+    <label class="visually-hidden" for="quantity">Quantity</label>
+    <div class="input-group">
+
+      <input type="text" class="form-control" id="quantity" name="quantity" placeholder="Quantity">
+    </div>
+  </div>
+   <div class="col-auto">
+    <label class="visually-hidden" for="rate">Rate</label>
+    <div class="input-group">
+
+      <input type="text" class="form-control" id="rate" name="rate" placeholder="Rate">
+    </div>
+  </div>
+
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary">Add Item</button>
+  </div>
+</form>
+
+
+                       <!-- <table class="table">
+  <thead>
+  </thead>
+  <tbody>
+  <form id="itemForm">
+    <tr>
+      <th scope="row">1</th>
+        <td>
+        <div class="form-group row">
+
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="description" placeholder="Item description">
+                </div>
+            </div>
+
+      </td>
+      <td>
+          <div class="form-group row">
+
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="quantity" placeholder="quantity"  >
+                </div>
+            </div>
+      </td>
+
+      <td> <div class="form-group row">
+
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="rate" placeholder="rate" >
+                </div>
+            </div>
+      </td>
+
+          <td> <div class="form-group row">
+
+                <div class="container mx-200">
+                        <button class="btn btn-primary right" id="addBtn">Add Item</button>
+                    </div>
+            </div>
+      </td>
+
+
+
+    </tr>
+    </form>
+
+
+
+                   <!--  <script src="static/js/addingitem.js"></script> --!>
+
+                     <!-- Inputs for items as table --!>
+
+
+
+                    <table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">S.no</th>
+      <th scope="col">Item Desciption</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Rate</th>
+        <th scope="col">Amount</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody">
+
+
+  </tbody>
+</table>
+
+
+
+
+                   
+
+        </div>
+{% endblock %}

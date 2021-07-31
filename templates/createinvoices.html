@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block body %}
+                <!-- Page content-->
+                <div class="container-fluid">
+
+                        <h3>Select Client</h3><br>
+                    <h1 class="mt-4">Create Invoices</h1>
+                    <div class="input-group mb-3">
+                       </div>
+                     <form action="/createinvoices" method="post">
+                    <div class="input-group mb-3">
+                        <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon" name="clientid">
+
+                            {% for client in clients %}
+                            <option value="{{client.id}}" >{{client.fname}} {{client.lname}} from {{client.cname}}</option>
+                            {% endfor %}</select></div>
+
+                         <div class="input-group mb-3">
+                        <h3>Select Business</h3></div>
+                    <div class="input-group mb-3">
+                        <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" name="businessid">
+
+                            {% for addbuss in addbus %}
+                            <option value="{{addbuss.id}}">{{addbuss.cname}} </option>
+                            {% endfor %}</select></div> <br><br>
+
+
+                     <div class="input-group mb-3">
+
+                         <button type="submit" class="btn btn-primary">Submit</button></div>
+                    </form>
+</div>
+
+
+
+
+
+
+
+                   <!-- <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                    <p>
+                        Make sure to keep all page content within the
+                        <code>#page-content-wrapper</code>
+                        . The top navbar is optional, and just for demonstration. Just create an element with the
+                        <code>#sidebarToggle</code>
+                        ID which will toggle the menu when clicked.
+                    </p> --!>
+
+        </div>
+       {% endblock %}
